@@ -1,5 +1,7 @@
 //Link: https://leetcode.com/problems/remove-linked-list-elements/
 
+//Time & Space: O(N) O(1)
+
 class Solution {
     public ListNode removeElements(ListNode head, int val) {
         if(head == null || (head.next == null && head.val == val)) return null;
