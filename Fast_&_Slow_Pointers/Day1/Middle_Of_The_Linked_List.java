@@ -1,5 +1,7 @@
 //Link: https://leetcode.com/problems/middle-of-the-linked-list/
 
+//Time & Space: O(N) O(1)
+
 class Solution {
     public ListNode middleNode(ListNode head) {
         if(head == null || head.next == null) return head;
