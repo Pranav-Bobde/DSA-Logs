@@ -1,5 +1,7 @@
 //Link: https://leetcode.com/problems/linked-list-cycle/
 
+//Time & Space: O(N) O(1)
+
 public class Solution {
     public boolean hasCycle(ListNode head) {
         if(head == null || head.next == null) return false;
