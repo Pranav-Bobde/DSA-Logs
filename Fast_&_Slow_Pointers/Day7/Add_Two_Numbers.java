@@ -1,5 +1,7 @@
 //Link: https://leetcode.com/problems/add-two-numbers/
 
+//Time & Space: O(N) O(1)
+
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = null, t = head;
