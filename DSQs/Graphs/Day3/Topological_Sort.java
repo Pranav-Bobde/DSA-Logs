@@ -40,7 +40,7 @@ class Solution
     static int[] topoSort(int V, ArrayList<ArrayList<Integer>> adj) 
     {
         int[] ans = new int[V];
-        Stack<Integer> s = new Stack<>();
+        Queue<Integer> q = new LinkedList<>();
         int[] indegree = new int[V];
         
         for(ArrayList<Integer> al : adj){
@@ -51,17 +51,17 @@ class Solution
         
         for(int i=0; i<V; i++)
             if(indegree[i] == 0)
-                s.push(i);
+                q.add(i);
         
         int idx = 0;
-        while(!s.isEmpty()){
-            int node = s.pop();
+        while(!q.isEmpty()){
+            int node = q.poll();
             ans[idx++] = node;
             
             for(int it : adj.get(node)){
                 indegree[it]--;
                 if(indegree[it]==0)
-                    s.push(it);
+                    q.add(it);
             }
             
         }
