@@ -32,3 +32,38 @@ class Solution {
         return false;
     }
 }
+
+//BFS (Kahn's Algo) - For Interview use the above DFS Method
+
+class Solution {
+    // Function to detect cycle in a directed graph.
+    public boolean isCyclic(int V, ArrayList<ArrayList<Integer>> adj) {
+        int[] ans = new int[V];
+        int[] indegree = new int[V];
+        Queue<Integer> q = new LinkedList<>();
+        for(ArrayList<Integer> al : adj){
+            for(int i: al)
+                indegree[i]++;
+        }
+        
+        for(int i=0; i<V; i++)
+            if(indegree[i]==0)
+                q.add(i);
+        
+        int idx = 0, count = 0;
+        while(!q.isEmpty()){
+            int node = q.poll();
+            count++;
+            ans[idx++] = node;
+            
+            for(int it: adj.get(node)){
+                indegree[it]--;
+                if(indegree[it] == 0)
+                    q.add(it);
+            }
+        }
+        if(count==V) return false;
+        return true;
+    }
+}
+
