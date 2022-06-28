@@ -2,21 +2,17 @@
 
 import java.util.*;
 
-class Node {
+class Node implements Comparator<Node>{
 	int v;
 	int w;
+	Node(){}
 	Node(int v, int w){
 		this.v = v;
 		this.w = w;
 	}
 	int getV() {return this.v;}
 	int getW() {return this.w;}
-	
-	
-}
-
-class sort implements Comparator<Node> {
-    @Override
+	@Override
 	public int compare(Node n1, Node n2){
 		if(n1.w < n2.w){
 			return -1;
@@ -26,6 +22,7 @@ class sort implements Comparator<Node> {
 		}
 		return 0;
 	}
+	
 }
 
 class Main {
@@ -33,7 +30,7 @@ class Main {
 		int[] dist = new int[N];
 		Arrays.fill(dist, Integer.MAX_VALUE);
 		dist[s] = 0;
-		PriorityQueue<Node> q = new PriorityQueue<Node>(N, new sort());
+		PriorityQueue<Node> q = new PriorityQueue<Node>(N, new Node());
 		q.add(new Node(s, 0));
 		while(!q.isEmpty()){
 			Node node = q.poll();
@@ -74,5 +71,4 @@ class Main {
 		shortestPath(n, 0, adj);
 	}
 }
-
 
