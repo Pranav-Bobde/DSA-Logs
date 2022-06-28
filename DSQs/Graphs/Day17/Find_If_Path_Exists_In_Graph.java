@@ -2,6 +2,7 @@
 
 //Time & Space Complexity: O(N) O(N)
 
+//BFS
 class Solution {
     public boolean validPath(int n, int[][] edges, int source, int destination) {
         ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>();
@@ -32,7 +33,7 @@ class Solution {
     }
 }
 
-//Another
+//DFS
 class Solution {
     public boolean validPath(int n, int[][] edges, int source, int destination) {
         ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>();
