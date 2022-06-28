@@ -31,3 +31,30 @@ class Solution {
         return vis[destination] == 1;
     }
 }
+
+//Another
+class Solution {
+    public boolean validPath(int n, int[][] edges, int source, int destination) {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>();
+        for(int i=0; i<n; i++)
+            adj.add(new ArrayList<Integer>());
+        
+        for(int[] arr : edges){
+            adj.get(arr[0]).add(arr[1]);
+            adj.get(arr[1]).add(arr[0]);
+        }
+        
+        int[] vis = new int[n];
+        return dfs(source, destination, vis, adj);
+    }
+    
+    boolean dfs(int s, int d, int[] vis, ArrayList<ArrayList<Integer>> adj){
+        if(s == d) return true;
+        vis[s] = 1;
+        for(int n : adj.get(s)){
+            if(vis[n] == 0 && dfs(n, d, vis, adj) == true)
+                return true;
+        }
+        return false;
+    }
+}
