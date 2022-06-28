@@ -1,6 +1,54 @@
 //Link: https://leetcode.com/problems/number-of-provinces/
 
 //Time & Space Complexity: O(N) O(N)
+//Optimised - UNION FIND
+
+class Solution {
+    int ans;
+    public int findCircleNum(int[][] edges) {
+        int n = edges.length;
+        int[] parent = new int[n];
+        int[] rank = new int[n];
+        ans = n;
+        for(int i=0; i<n; i++) parent[i] = i;
+        for(int i=0; i<n; i++){
+            for(int j=i+1; j<n; j++){
+                if(i!=j && edges[i][j] == 1){
+                    union(i, j, parent, rank);
+                }
+            }
+        }
+        
+        return ans;
+    }
+    
+    void union(int x, int y, int[] p, int[] r){
+        int xR = find(x, p);
+        int yR = find(y, p);
+        
+        if (xR == yR) return;
+        
+        if(r[xR] < r[yR]){
+            p[xR] = yR;
+        }else if(r[xR] > r[yR]){
+            p[yR] = xR;
+        }else{
+            p[yR] = xR;
+            r[xR]++;
+        }
+        ans--;
+    }
+    
+    int find(int x, int[] p){
+        if(p[x] != x){
+            p[x] = find(p[x], p);
+        }
+        return p[x];
+    }
+    
+}
+
+//Time & Space Complexity: O(N) O(N)
 
 class Solution {
     static HashSet<Integer> set = new HashSet<>();
