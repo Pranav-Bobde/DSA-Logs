@@ -1,6 +1,6 @@
 //No Link
 
-//Time & Space Complexity: O(2^N) O(N)
+//Time & Space Complexity: O(2^N) O(N*N)
 
 const comb = (arr) => {
     if(arr.length == 0) return [[]];
