@@ -1,6 +1,6 @@
 //Link: https://www.interviewbit.com/problems/black-shapes/
 
-//Time & Space Complexity: O(N) O(N)
+//Time & Space Complexity: O(N) O(N^2)
 
 public class Solution {
     boolean[][] vis;
