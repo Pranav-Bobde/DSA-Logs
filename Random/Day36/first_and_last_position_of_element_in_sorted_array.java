@@ -4,7 +4,7 @@
 
 class Solution {
     public int[] searchRange(int[] arr, int target) {
-        if(arr.length == 0) return new int[]{-1, -1};
+        if(arr.length == 0 || arr[0] > target || arr[n-1] < target) return new int[]{-1, -1};
         return new int[]{bs(arr, target, true), bs(arr, target, false)};   
     }
     
