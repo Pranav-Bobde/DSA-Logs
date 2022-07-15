@@ -124,49 +124,14 @@ public class Main
         }
     }
     
-    //merge intervals
-    static Stack<int[]> mergedIntervals = new Stack<>();
-    static void mergeIntervals(int[][] arr){
-        mergedIntervals.push(arr[0]);
-        
-        for(int i=1; i<arr.length; i++){
-            
-            int[] prevInterval = mergedIntervals.pop();
-            int[] currInterval = arr[i];
-            
-            if(currInterval[0] > prevInterval[1]){
-                mergedIntervals.push(prevInterval);
-                mergedIntervals.push(currInterval);
-            }else{
-                int[] toAdd = new int[2];
-                toAdd[0] = prevInterval[0];
-                toAdd[1] = Math.max(prevInterval[1], currInterval[1]);
-                mergedIntervals.push(toAdd);
-            }
-        }
-        
-        for(int[] e : mergedIntervals){
-            System.out.println(Arrays.toString(e));
-        }
-        
-    }
-    
-	public static void main(String[] args) {
-	    int[] arr = new int[]{5, 4, 3, 2, 1};
-	   // selectionSort(arr);
-	   //bubbleSort(arr);
-	   //insertionSort(arr);
-	   //mergeSort(arr, 0, 4);
-	   countSort(arr);
+public static void main(String[] args) {
+   int[] arr = new int[]{5, 4, 3, 2, 1};
+   // selectionSort(arr);
+   //bubbleSort(arr);
+   //insertionSort(arr);
+   //mergeSort(arr, 0, 4);
+   //countSort(arr);
 	   
-	   int[][] intervals = new int[][]{
-	       {2, 4},
-	       {3, 6},
-	       {6, 8},
-	       {9, 12},
-	       {11, 13}
-	   };
-	   //mergeIntervals(intervals);
-	   System.out.println(Arrays.toString(arr));
-	}
+   System.out.println(Arrays.toString(arr));
+}
 }
