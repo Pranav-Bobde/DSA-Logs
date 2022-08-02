@@ -1,6 +1,6 @@
 //Link: https://leetcode.com/contest/biweekly-contest-83/problems/shortest-impossible-sequence-of-rolls/
 
-//Time & Space Complexity: O() O()
+//Time & Space Complexity: O(N) O(N)
 
 class Solution {
     public int shortestSequence(int[] rolls, int k) {
