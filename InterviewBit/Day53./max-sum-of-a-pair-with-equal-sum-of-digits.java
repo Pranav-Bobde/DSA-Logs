@@ -1,6 +1,6 @@
 //Link: https://leetcode.com/contest/weekly-contest-302/problems/max-sum-of-a-pair-with-equal-sum-of-digits/
 
-//Time & Space Complexity: O(N) O(N)
+//Time & Space Complexity: O(NLogN) O(N)
 class Solution {
     int digiSum(int num){
         int sum = 0;
