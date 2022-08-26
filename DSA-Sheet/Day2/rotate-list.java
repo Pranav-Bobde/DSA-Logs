@@ -1,7 +1,26 @@
 //Link: https://leetcode.com/problems/rotate-list/
 
 //Time & Space: O(N) O(1)
+class Solution {
+    public ListNode rotateRight(ListNode head, int k) {
+        if(head==null || head.next==null || k==0) return head;
+        ListNode temp = head;
+        int s = 1;
+        while(temp.next!=null){
+            s++;
+            temp = temp.next;
+        }
+        temp.next = head;
+        k %= s;
+        k = s - k;
+        while(k-->0) temp = temp.next;
+        head = temp.next;
+        temp.next = null;
+        return head;
+    }
+}
 
+//Time & Space: O(N) O(1)
 class Solution {
     ListNode reverse(ListNode head){
         ListNode prev = null, curr = head, next = head.next;
