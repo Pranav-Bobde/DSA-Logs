@@ -1,6 +1,6 @@
 //Link: https://practice.geeksforgeeks.org/problems/inversion-of-array-1587115620/1
 
-//Time & Space: O(logN) O(N)
+//Time & Space: O(NlogN) O(N)
 
 class Solution
 {
