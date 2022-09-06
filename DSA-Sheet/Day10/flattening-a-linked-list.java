@@ -1,6 +1,6 @@
 //Link: https://practice.geeksforgeeks.org/problems/flattening-a-linked-list/1
 
-//Time & Space: O(N) O(N)
+//Time & Space: O(N*M) O(1) (Excluding recursion space)
 
 class GfG
 {
